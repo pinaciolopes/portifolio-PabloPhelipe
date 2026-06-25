@@ -196,19 +196,55 @@ nav{
     box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
 }
 
+
 #section-sobre{
     min-height: 100vh;
+    padding-top: 4rem;
+}
+.sobre-card{
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: min(1200px, 90%);
     margin: 0 auto;
-    padding: 4rem;
+    padding: 6rem;
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--cor-borda);
     border-radius: 24px;
     backdrop-filter: blur(12px);
     box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+#section-tecnologia{
+    min-height: 100vh;
+}
+
+.tech-card img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+.tech-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-fer-card{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tech-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 
