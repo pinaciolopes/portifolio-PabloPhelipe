@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --cor-primaria: #2563eb;
-    --cor-fundo: #ffffff;
-    --cor-texto: #333333;
-    --cor-card: #f8fafc;
+    --cor-primaria: #0284c7;
+    --cor-secundaria: #082f49 60%,;
+    --cor-text: #f8fafc;
+    --cor-destaque: #38bdf8;
+    --cor-borda: rgba(56, 189, 248, 0.25);
+
+    --cor-fundo: radial-gradient(
+        circle at top,
+        #38bdf8 0%,
+        #0369a1 25%,
+        #082f49 60%,
+        #020617 100%
+    );
 
     --fonte-principal: 'Poppins', sans-serif;
 
@@ -27,6 +36,92 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: var(--cor-fundo);
+body {
+    font-family: var(--fonte-principal);
+    background:var(--cor-fundo) ;
+    color: var(--cor-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    border: 1px solid var(--cor-borda);
+    border-width: 0 3px 3px 3px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu{
+    display: flex;
+    gap: 3em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    transition: color .3s ease;
+}
+
+.nav-link:hover{
+    color: var(--cor-primaria);
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    background:var(--cor-primaria) ;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+section .hero{
+    min-height: 100vh;
+    padding: 100px 0 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.imagem img{
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid var(--cor-primaria);
+}
+
+
+section{
+    background: var(--cor-fundo);
+    border: 3px solid var(--cor-primaria);
+    border-radius: 20px;
+    margin: 3em auto;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
