@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@keyframes flutuar{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
 
 :root{
     --cor-primaria: #0284c7;
@@ -23,9 +36,6 @@
     --texto: 1rem;
 }
 
-@media screen {
-    
-}
 
 *{
     margin: 0%;
@@ -146,13 +156,9 @@ nav{
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(10px);
-    transition: all 0.5s ease, box-shadow 0.3s ease;
+    animation: flutuar 3s ease-in-out infinite;
 }
 
-.imagem:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
-}
 
 .imagem h3, .imagem p{
     color: #0284c7;
@@ -222,6 +228,24 @@ nav{
     flex-direction: column;
     justify-content: center;
     padding: 4rem 0;
+    padding-top: 85px;
+}
+.tecnologia-card{
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 6rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--cor-borda);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.categoria h3{
+    color: var(--cor-destaque);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: .5rem;
 }
 
 .tech-card img{
@@ -233,6 +257,10 @@ nav{
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: .3s ease;
+}
+.tech-card:hover{
+    transform: translateX(8px);
 }
 
 .tech-fer-card{
@@ -254,31 +282,34 @@ nav{
 
 #section-formacao-certificacao{
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
 }
 
 .cert-form-card{
-    min-height: 95vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* tira o centralizado */
+    justify-content: flex-start;
     width: min(1200px, 90%);
     margin: 0 auto;
-
-    padding: 8rem 6rem 6rem; /* aumenta o espaço em cima */
-
+    padding: 3rem;
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--cor-borda);
     border-radius: 24px;
     backdrop-filter: blur(12px);
     box-shadow: 0 20px 40px rgba(0,0,0,.35);
-    gap: 6em;
+    gap: 2em;
 }
 
 .art-certificacao h3,
 .art-formacao h3{
     font-size: 1.2rem;
     margin-bottom: .5rem;
+    color: var(--cor-destaque);
 }
+
 
 .art-certificacao p,
 .art-formacao p{
@@ -293,6 +324,12 @@ nav{
     border-left: 3px solid var(--cor-primaria);
     background: rgba(255,255,255,0.03);
     border-radius: 12px;
+    transition: .3s ease;
+}
+.art-certificacao:hover,
+.art-formacao:hover{
+    transform: translateX(8px);
+    box-shadow: 0 10px 20px rgba(56,189,248,.15);
 }
 
 .link-form-cert-card{
@@ -304,6 +341,7 @@ nav{
     font-weight: 600;
     border-radius: 999px;
     transition: all 0.5s ease, box-shadow 0.3s ease;
+    align-self: center;
 }
 
 .link-form-cert-card:hover{
@@ -315,6 +353,13 @@ nav{
     min-height: 100vh;
     padding: 6rem 0;
     display: flex;
+    justify-content: center;
+}
+
+.projetos-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
 }
 
@@ -331,6 +376,14 @@ nav{
     gap: 4rem;
 }
 
+.projeto-detalhes{
+    display: none;
+}
+
+.projeto.ativo .projeto-detalhes{
+    display: block;
+}
+
 .projetos-card h2{
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -340,8 +393,8 @@ nav{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    padding: 2rem;
+    width: 350px;
+    padding: 1.5rem;
     border-radius: 16px;
     background: rgba(255,255,255,0.03);
     border-left: 3px solid var(--cor-primaria);
@@ -364,6 +417,22 @@ nav{
 
 .projeto img:hover{
     transform: scale(1.02);
+}
+
+.btn-ver-mais{
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--cor-fundo);
+    color:var(--cor-text);
+    font-weight: 600;
+    border-radius: 999px;
+    transition: all 0.5s ease, box-shadow 0.3s ease;
+
+}
+
+.btn-ver-mais:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
 }
 
 .projeto ul{
